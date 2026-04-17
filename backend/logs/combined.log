@@ -346,3 +346,43 @@ undefined [info] : Fetching full grade list {"metadata":{"timestamp":"2026-04-17
 undefined [info] : GET /grades 304 - - 13.442 ms {"metadata":{"timestamp":"2026-04-17 14:32:40"}}
 undefined [info] : Fetching full attendance list {"metadata":{"timestamp":"2026-04-17 14:34:29"}}
 undefined [info] : GET /attendance 304 - - 29.079 ms {"metadata":{"timestamp":"2026-04-17 14:34:29"}}
+undefined [info] : Searching courses - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:37:13"}}
+undefined [info] : GET /courses/search?search=&page=1&limit=10 304 - - 53.649 ms {"metadata":{"timestamp":"2026-04-17 14:37:13"}}
+undefined [info] : Searching students - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:40:04"}}
+undefined [info] : GET /students/search?search=&page=1&limit=10 304 - - 138.082 ms {"metadata":{"timestamp":"2026-04-17 14:40:04"}}
+undefined [info] : Searching activities - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:40:06"}}
+undefined [info] : GET /activities/search?search=&page=1&limit=10 304 - - 12.631 ms {"metadata":{"timestamp":"2026-04-17 14:40:06"}}
+undefined [info] : Fetching full submission list {"metadata":{"timestamp":"2026-04-17 14:41:09"}}
+undefined [info] : GET /submissions 304 - - 46.965 ms {"metadata":{"timestamp":"2026-04-17 14:41:09"}}
+undefined [info] : Fetching full grade list {"metadata":{"timestamp":"2026-04-17 14:41:12"}}
+undefined [info] : GET /grades 304 - - 11.241 ms {"metadata":{"timestamp":"2026-04-17 14:41:12"}}
+undefined [info] : Fetching full attendance list {"metadata":{"timestamp":"2026-04-17 14:41:14"}}
+undefined [info] : GET /attendance 304 - - 12.112 ms {"metadata":{"timestamp":"2026-04-17 14:41:14"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:42:17"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:42:17"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:42:30"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:42:30"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:42:36"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:42:36"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:42:41"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:42:41"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:43:50"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:43:50"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:44:01"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:44:01"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:44:14"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:44:14"}}
+undefined [info] : Searching attendance - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:45:17"}}
+undefined [info] : GET /attendance/search?search=&page=1&limit=10 200 80 - 128.844 ms {"metadata":{"timestamp":"2026-04-17 14:45:17"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:45:26"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:45:26"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:45:34"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:45:34"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:45:44"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:45:44"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:46:41"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:46:41"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:46:48"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:46:48"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:46:57"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:46:57"}}

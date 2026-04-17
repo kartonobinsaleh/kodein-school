@@ -20,38 +20,40 @@ export function SearchToolbar({
   className = ""
 }: SearchToolbarProps) {
   return (
-    <Card className={`!p-1.5 border-none shadow-lg bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-800 rounded-[20px] ${className}`}>
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        {/* Search Field */}
-        <div className="flex items-center flex-1 pr-4 group">
-          <span className="text-xl text-gray-300 mx-4 group-focus-within:text-primary transition-all duration-300">🔍</span>
-          <Input
+    <Card className={`!p-2 border-none shadow-lg bg-white dark:bg-dark-card border border-gray-100 dark:border-gray-800 rounded-[22px] ${className}`}>
+      <div className="flex flex-col md:flex-row md:items-stretch justify-between gap-3">
+        {/* Search Field Area - Spacing Improved */}
+        <div className="flex items-center flex-1 group bg-gray-50/30 dark:bg-black/10 rounded-[16px] border border-transparent focus-within:border-primary/20 transition-all duration-300">
+          <span className="text-xl text-gray-300 ml-6 mr-4 group-focus-within:text-primary transition-all duration-300">🔍</span>
+          <Input 
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder={placeholder}
-            className="border-none bg-transparent !py-3 !px-4 h-auto focus:ring-0 shadow-none text-base font-bold placeholder:text-gray-300"
+            className="border-none bg-transparent !py-3.5 !px-3 h-auto focus:ring-0 shadow-none text-base font-bold placeholder:text-gray-300"
           />
         </div>
-
-        {/* View Selection Toggle */}
-        <div className="flex bg-gray-50 dark:bg-black/20 p-1 rounded-[16px] border border-gray-100 dark:border-gray-800 shadow-inner mr-1 md:mr-1 mb-1 md:mb-0">
+        
+        {/* View Selection Toggle Area */}
+        <div className="flex bg-gray-100/50 dark:bg-black/30 p-1.5 rounded-[18px] border border-gray-100/50 dark:border-gray-800/50 shadow-inner min-w-[260px]">
           <button
             onClick={() => onViewModeChange('card')}
-            className={`px-6 py-3 rounded-[12px] text-[10px] font-black tracking-widest transition-all duration-300 flex items-center gap-2 uppercase ${viewMode === 'card'
-                ? 'bg-white dark:bg-primary/20 dark:border dark:border-primary/30 text-primary shadow-sm'
-                : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'
-              }`}
+            className={`flex-1 rounded-[14px] text-[10px] font-black tracking-widest transition-all duration-200 flex items-center justify-center gap-2.5 uppercase border-2 ${
+              viewMode === 'card' 
+                ? 'bg-white dark:bg-primary/20 border-white dark:border-primary/40 text-primary shadow-md shadow-gray-200/50 dark:shadow-none' 
+                : 'bg-transparent border-transparent text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'
+            }`}
           >
-            🎴 Card
+             🎴 Card
           </button>
           <button
             onClick={() => onViewModeChange('table')}
-            className={`px-6 py-3 rounded-[12px] text-[10px] font-black tracking-widest transition-all duration-300 flex items-center gap-2 uppercase ${viewMode === 'table'
-                ? 'bg-white dark:bg-primary/20 dark:border dark:border-primary/30 text-primary shadow-sm'
-                : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'
-              }`}
+            className={`flex-1 rounded-[14px] text-[10px] font-black tracking-widest transition-all duration-200 flex items-center justify-center gap-2.5 uppercase border-2 ${
+              viewMode === 'table' 
+                ? 'bg-white dark:bg-primary/20 border-white dark:border-primary/40 text-primary shadow-md shadow-gray-200/50 dark:shadow-none' 
+                : 'bg-transparent border-transparent text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'
+            }`}
           >
-            📋 Table
+             📋 Table
           </button>
         </div>
       </div>

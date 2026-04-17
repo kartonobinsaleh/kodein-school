@@ -9,6 +9,7 @@ const router = Router();
 
 // Retrieve grades
 router.get('/', authenticate, gradeController.getAll);
+router.get('/search', authenticate, gradeController.search);
 router.get('/:id', authenticate, gradeController.getById);
 
 // Create, Update, Delete grades (Managed by MENTOR or ADMIN)

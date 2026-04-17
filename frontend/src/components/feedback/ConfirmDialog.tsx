@@ -31,7 +31,7 @@ export function ConfirmDialog({
       actions={
         <div className="flex gap-3 w-full sm:w-auto">
           <Button 
-            variant="default" 
+            variant="secondary" 
             onClick={onClose} 
             className="flex-1 sm:flex-none border-gray-200 dark:border-dark-border"
           >

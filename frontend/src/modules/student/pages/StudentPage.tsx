@@ -13,7 +13,7 @@ export default function StudentPage() {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
   
-  // Dedicated Search Hook for Table/Grid
+  // Data Fetching
   const { data: response, isLoading, isError } = useStudentSearch({ search, page, limit });
   const { mutate: deleteStudent } = useDeleteStudent();
   
@@ -89,7 +89,8 @@ export default function StudentPage() {
             {meta?.total ?? 0} Scholars Authorized
           </p>
         </div>
-        <Button variant="primary" className="!px-8 h-[54px] shadow-lg shadow-primary/20">
+        {/* Updated Button Variant to Success (Green) */}
+        <Button variant="success" className="!px-8 h-[54px] shadow-lg shadow-success/20">
           + ENROLL NEW SCHOLAR
         </Button>
       </div>
@@ -106,7 +107,7 @@ export default function StudentPage() {
         placeholder="Search scholars by name or NIS..."
       />
 
-      {/* Main Content Display */}
+      {/* Main Content Dynamic Display */}
       {students.length === 0 ? (
         <EmptyState message="No scholars found!" emoji="🏜️" />
       ) : (

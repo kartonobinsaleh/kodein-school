@@ -9,6 +9,7 @@ const router = Router();
 
 // Retrieve submissions
 router.get('/', authenticate, submissionController.getAll);
+router.get('/search', authenticate, submissionController.search);
 router.get('/:id', authenticate, submissionController.getById);
 
 // Create submissions (STUDENT submits to an activity)
@@ -21,8 +22,6 @@ router.post(
 );
 
 // Update submissions (Mentor grades, or student updates content before grading)
-// Normally, one would split grading endpoints from submission endpoints,
-// but for MVP CRUD, we allow all authorized roles to use PATCH.
 router.patch(
   '/:id',
   authenticate,

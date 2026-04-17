@@ -15,10 +15,20 @@ export const attendanceController = {
 
   getAll: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
+      const result = await attendanceService.getAllAttendance();
+      res.status(200).json({ success: true, data: result });
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  search: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const search = req.query.search as string;
       const page = req.query.page as string;
       const limit = req.query.limit as string;
       
-      const result = await attendanceService.getAllAttendance(page, limit);
+      const result = await attendanceService.searchAttendance(search, page, limit);
       res.status(200).json({ 
         success: true, 
         data: result.data, 
@@ -54,7 +64,7 @@ export const attendanceController = {
     try {
       const id = req.params.id as string;
       await attendanceService.deleteAttendance(id);
-      res.status(200).json({ success: true, message: 'Attendance record deleted successfully' });
+      res.status(200).json({ success: true, message: 'Attendance record deleted' });
     } catch (error) {
       next(error);
     }

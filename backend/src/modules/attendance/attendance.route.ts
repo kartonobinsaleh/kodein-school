@@ -9,6 +9,7 @@ const router = Router();
 
 // Retrieve records
 router.get('/', authenticate, attendanceController.getAll);
+router.get('/search', authenticate, attendanceController.search);
 router.get('/:id', authenticate, attendanceController.getById);
 
 // Insert or modify attendance statuses (Managed by MENTOR or ADMIN)

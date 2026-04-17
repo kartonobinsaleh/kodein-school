@@ -15,11 +15,20 @@ export const submissionController = {
 
   getAll: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
+      const result = await submissionService.getAllSubmissions();
+      res.status(200).json({ success: true, data: result });
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  search: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
       const search = req.query.search as string;
       const page = req.query.page as string;
       const limit = req.query.limit as string;
       
-      const result = await submissionService.getAllSubmissions(search, page, limit);
+      const result = await submissionService.searchSubmissions(search, page, limit);
       res.status(200).json({ 
         success: true, 
         data: result.data, 

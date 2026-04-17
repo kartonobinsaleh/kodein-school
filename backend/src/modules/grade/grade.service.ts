@@ -1,50 +1,45 @@
 import { gradeRepository } from './grade.repository';
 import { CreateGradeInput, UpdateGradeInput } from './grade.schema';
 import { AppError } from '../../middleware/error.middleware';
-import { getPagination, buildMeta } from '../../utils/query.utils';
+import { buildSearchFilter, getPagination, buildMeta } from '../../utils/query.utils';
 import logger from '../../utils/logger';
 
 export const gradeService = {
   createGrade: async (input: CreateGradeInput) => {
-    logger.info(`Creating new grade for student: ${input.studentId}`);
-    
-    const existing = await gradeRepository.checkExists(input.studentId, input.subjectId);
-    if (existing) {
-      throw new AppError('Grade already exists for this student and subject', 400);
-    }
-    
+    logger.info(`Recording grade for student ${input.studentId} in course ${input.courseId}`);
     return gradeRepository.create(input);
   },
 
-  getAllGrades: async (page?: string, limit?: string) => {
-    if (page || limit) {
-      logger.info(`Fetching paginated grades - Page: ${page}, Limit: ${limit}`);
-      const { skip, take, page: p, limit: l } = getPagination(page, limit);
-      const { data, total } = await gradeRepository.findAll({ skip, take });
-      return { data, meta: buildMeta(total, p, l) };
-    }
+  getAllGrades: async () => {
+    logger.info('Fetching full list of all grades');
+    const { data } = await gradeRepository.findAll();
+    return data;
+  },
 
-    logger.info('Fetching full grade list');
-    const { data, total } = await gradeRepository.findAll();
-    return { data, total };
+  searchGrades: async (search?: string, page?: string, limit?: string) => {
+    logger.info(`Searching grades - Search: ${search}, Page: ${page}, Limit: ${limit}`);
+    const { skip, take, page: p, limit: l } = getPagination(page, limit);
+    
+    // Simple filter for comment or title if exists.
+    const where = buildSearchFilter(search, ['comment']);
+    const { data, total } = await gradeRepository.findAll({ where, skip, take });
+    
+    return { data, meta: buildMeta(total, p, l) };
   },
 
   getGradeById: async (id: string) => {
-    logger.info(`Fetching grade by ID: ${id}`);
     const grade = await gradeRepository.findById(id);
     if (!grade) throw new AppError('Grade not found', 404);
     return grade;
   },
 
   updateGrade: async (id: string, input: UpdateGradeInput) => {
-    logger.info(`Updating grade with ID: ${id}`);
     const grade = await gradeRepository.findById(id);
     if (!grade) throw new AppError('Grade not found', 404);
     return gradeRepository.update(id, input);
   },
 
   deleteGrade: async (id: string) => {
-    logger.info(`Deleting grade with ID: ${id}`);
     const grade = await gradeRepository.findById(id);
     if (!grade) throw new AppError('Grade not found', 404);
     return gradeRepository.delete(id);
