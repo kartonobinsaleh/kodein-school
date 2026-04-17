@@ -2,6 +2,10 @@ import prisma from '../../config/prisma';
 import { User, Prisma } from '@prisma/client';
 
 export const userRepository = {
+  create: async (data: Prisma.UserCreateInput) => {
+    return prisma.user.create({ data });
+  },
+
   findAll: async (params?: { where?: Prisma.UserWhereInput; skip?: number; take?: number }) => {
     const where = params?.where || {};
     const skip = params?.skip;

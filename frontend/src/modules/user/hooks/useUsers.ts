@@ -9,10 +9,20 @@ export const useUserSearch = (params: UserSearchParams) => {
   });
 };
 
-export const useUpdateUserRole = () => {
+export const useCreateUser = () => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: ({ id, role }: { id: string; role: string }) => userApi.updateRole(id, role),
+    mutationFn: (data: any) => userApi.create(data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['users'] });
+    },
+  });
+};
+
+export const useUpdateUser = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ({ id, ...data }: { id: string } & any) => userApi.update(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['users'] });
     },

@@ -9,8 +9,9 @@ const router = Router();
 router.use(authenticate);
 router.use(authorize('ADMIN'));
 
+router.post('/', userController.create);
 router.get('/search', userController.search);
-router.patch('/:id/role', userController.updateRole);
+router.patch('/:id', userController.update);
 router.delete('/:id', userController.delete);
 
 export default router;

@@ -2,6 +2,15 @@ import { Request, Response, NextFunction } from 'express';
 import { userService } from './user.service';
 
 export const userController = {
+  create: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const result = await userService.createUser(req.body);
+      res.status(201).json({ success: true, data: result });
+    } catch (error) {
+      next(error);
+    }
+  },
+
   search: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const search = req.query.search as string;
@@ -19,11 +28,10 @@ export const userController = {
     }
   },
 
-  updateRole: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  update: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const { id } = req.params;
-      const { role } = req.body;
-      const result = await userService.updateUserRole(id, role);
+      const id = req.params.id as string;
+      const result = await userService.updateUser(id, req.body);
       res.status(200).json({ success: true, data: result });
     } catch (error) {
       next(error);
@@ -32,7 +40,7 @@ export const userController = {
 
   delete: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const { id } = req.params;
+      const id = req.params.id as string;
       const currentUserId = (req as any).user.id;
       await userService.deleteUser(id, currentUserId);
       res.status(200).json({ success: true, message: 'User deleted' });

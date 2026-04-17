@@ -1,9 +1,19 @@
+import bcrypt from 'bcrypt';
 import { userRepository } from './user.repository';
 import { AppError } from '../../middleware/error.middleware';
 import { buildSearchFilter, getPagination, buildMeta } from '../../utils/query.utils';
 import logger from '../../utils/logger';
 
 export const userService = {
+  createUser: async (data: any) => {
+    logger.info(`Admin creating new user: ${data.email} as ${data.role}`);
+    const hashedPassword = await bcrypt.hash(data.password, 10);
+    return userRepository.create({
+      ...data,
+      password: hashedPassword
+    });
+  },
+
   searchUsers: async (search?: string, page?: string, limit?: string) => {
     logger.info(`Admin searching users - Search: ${search}, Page: ${page}, Limit: ${limit}`);
     const { skip, take, page: p, limit: l } = getPagination(page, limit);
@@ -13,12 +23,22 @@ export const userService = {
     return { data, meta: buildMeta(total, p, l) };
   },
 
-  updateUserRole: async (id: string, role: any) => {
+  updateUser: async (id: string, data: { email?: string; password?: string; role?: any }) => {
     const user = await userRepository.findById(id);
     if (!user) throw new AppError('User not found', 404);
     
-    logger.info(`Updating user ${user.email} role to ${role}`);
-    return userRepository.update(id, { role });
+    const updateData: any = { ...data };
+    
+    if (data.password) {
+      logger.info(`Admin resetting password for user ${user.email}`);
+      updateData.password = await bcrypt.hash(data.password, 10);
+    }
+
+    if (data.email && data.email !== user.email) {
+      logger.info(`Admin updating email for user ${user.email} -> ${data.email}`);
+    }
+
+    return userRepository.update(id, updateData);
   },
 
   deleteUser: async (id: string, currentUserId: string) => {
