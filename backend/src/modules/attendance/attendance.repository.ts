@@ -18,7 +18,10 @@ export const attendanceRepository = {
         include: {
           student: { select: { id: true, name: true, nis: true } },
         },
-        orderBy: { date: 'desc' },
+        orderBy: [
+          { date: 'desc' },
+          { student: { name: 'asc' } }
+        ],
       });
       return { data, total: data.length };
     }
@@ -31,7 +34,10 @@ export const attendanceRepository = {
         include: {
           student: { select: { id: true, name: true, nis: true } },
         },
-        orderBy: { date: 'desc' },
+        orderBy: [
+          { date: 'desc' },
+          { student: { name: 'asc' } }
+        ],
       }),
       prisma.attendance.count({ where }),
     ]);
