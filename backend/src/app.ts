@@ -14,6 +14,7 @@ import activityRouter   from './modules/activity/activity.route';
 import submissionRouter from './modules/submission/submission.route';
 import gradeRouter      from './modules/grade/grade.route';
 import attendanceRouter from './modules/attendance/attendance.route';
+import userRouter       from './modules/user/user.route';
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use('/activities',  activityRouter);
 app.use('/submissions', submissionRouter);
 app.use('/grades',      gradeRouter);
 app.use('/attendance',  attendanceRouter);
+app.use('/users',       userRouter);
 
 // ─── Centralized Error Handler (must be last) ─────────────────────────────────
 app.use(errorHandler);

@@ -5,13 +5,14 @@ import { useThemeStore } from '@/store/themeStore';
 import { ConfirmDialog } from '@/components/feedback';
 
 const navItems = [
-  { to: '/dashboard',   label: 'Dashboard',   icon: '🏠' },
-  { to: '/students',    label: 'Students',    icon: '👤' },
-  { to: '/courses',     label: 'Courses',     icon: '📚' },
-  { to: '/activities',  label: 'Activities',    icon: '📋' },
-  { to: '/submissions', label: 'Submissions',   icon: '📤' },
-  { to: '/grades',      label: 'Grades',        icon: '🎯' },
-  { to: '/attendance',  label: 'Attendance',    icon: '✅' },
+  { to: '/dashboard',   label: 'Dashboard',   icon: '🏠', roles: ['ADMIN', 'MENTOR', 'STUDENT'] },
+  { to: '/users',        label: 'Users',       icon: '🔑', roles: ['ADMIN'] },
+  { to: '/students',    label: 'Students',    icon: '👤', roles: ['ADMIN', 'MENTOR'] },
+  { to: '/courses',     label: 'Courses',     icon: '📚', roles: ['ADMIN', 'MENTOR', 'STUDENT'] },
+  { to: '/activities',  label: 'Activities',  icon: '📋', roles: ['ADMIN', 'MENTOR'] },
+  { to: '/submissions', label: 'Submissions', icon: '📤', roles: ['ADMIN', 'MENTOR', 'STUDENT'] },
+  { to: '/grades',      label: 'Grades',      icon: '🎯', roles: ['ADMIN', 'MENTOR', 'STUDENT'] },
+  { to: '/attendance',  label: 'Attendance',  icon: '✅', roles: ['ADMIN', 'MENTOR', 'STUDENT'] },
 ];
 
 export default function Sidebar() {
@@ -41,7 +42,9 @@ export default function Sidebar() {
       {/* Navigation List */}
       <nav className="flex-1 overflow-y-auto px-4 custom-scrollbar">
         <ul className="space-y-1">
-          {navItems.map(({ to, label, icon }) => (
+          {navItems
+            .filter(item => item.roles.includes(user?.role || ''))
+            .map(({ to, label, icon }) => (
             <li key={to}>
               <NavLink
                 to={to}
