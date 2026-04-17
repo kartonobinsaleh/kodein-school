@@ -31,12 +31,14 @@ cp .env.example .env
 ```
 Isi nilai `.env` dengan kredensial database Anda (Sangat disarankan menggunakan port `4000` agar tidak bentrok dengan frontend Next.js di `3000`).
 
-### 4. Database Setup (Prisma)
-Jika ini adalah pertama kali Anda mengatur *project*, wajib mereplikasi schema ke database agar tabel terbentuk, dilanjut dengan men-generate Prisma Client:
+### 4. Database Setup (Prisma & Seeding)
+Jika ini adalah pertama kali Anda mengatur *project*, wajib mereplikasi schema ke database, men-generate client, lalu mengisi data dummy:
 ```bash
 npx prisma db push
 npx prisma generate
+npm run seed
 ```
+*Note: Script seed akan menghapus data lama dan membuat 25+ record baru (Student, Course, Activity, dsb).*
 
 ### 5. Jalankan Server!
 ```bash
@@ -52,12 +54,34 @@ Gunakan Endpoint uji coba: `GET http://localhost:4000/health`
 Project ini mutlak **wajib** mengikuti struktur *Layered Architecture* berikut sesuai urutan ke bawah. Dilarang keras melakukan *Layer Skipping*!
 
 1. **Route (`*.route.ts`)**: Mendefinisikan URL/Path, menerima *Middleware Authentication/RBAC*, dan mengarahkan ke Controller.
-2. **Controller (`*.controller.ts`)**: Hanya fokus menangani Request (params, body) dari klien, mengirim `req.user` JWT Payload yang telah tervalidasi, mengembalikan format Response HTTP standar, dan melempar *Error Handler*. Tidak ada logika bisnis di sini.
-3. **Service (`*.service.ts`)**: **Pusat Logika Bisnis & Otorisasi Hak Milik (Ownership).** Memvalidasi logic kompleks (seperti: "Apakah Mentor XYZ punga wewenang atas Course ini?"). *Tidak boleh sedikitpun memanggil Prisma/Database secara langsung.*
-4. **Repository (`*.repository.ts`)**: Satu-satunya lapisan/layer yang boleh mengimport dan menyentuh `prisma`. Merangkai interaksi ke tabel PostgreSQL secara performan (misal: join relasi).
-5. **Schema (`*.schema.ts`)**: Menyimpan definisi Zod untuk validasi `body` dari luar.
+2. **Controller (`*.controller.ts`)**: Fokus menangani Request (params, body), mengirim format Response HTTP standar, dan melempar *Error Handler*.
+3. **Service (`*.service.ts`)**: **Pusat Logika Bisnis & Otorisasi.** Validasi logic kompleks dan pengolahan data sebelum masuk ke DB.
+4. **Repository (`*.repository.ts`)**: Satu-satunya layer yang boleh menyentuh `prisma`.
+5. **Schema (`*.schema.ts`)**: Definisi Zod untuk validasi data.
+
+### 🔍 Standardisasi Search & Pagination
+Semua modul yang memiliki tampilan daftar (Tabel/Grid) **WAJIB** memisahkan endpoint pengambilan data menjadi dua kategori:
+
+1.  **`GET /` (Full List)**: Mengambil seluruh data tanpa batasan (biasanya untuk kebutuhan *Dropdown*/*Select Option*).
+2.  **`GET /search` (Paginated Search)**: Menggunakan query params `search`, `page`, dan `limit`. Endpoint ini wajib mengembalikan objek `meta`.
+
+**Contoh Response `/search` Standar:**
+```json
+{
+  "success": true,
+  "data": [...],
+  "meta": {
+    "total": 150,
+    "page": 1,
+    "limit": 10,
+    "totalPages": 15
+  }
+}
+```
+
+---
 
 ## 🔐 Role-Based & Ownership Access Control (OBAC)
 - Autentikasi dilakukan via JWT HTTP Bearer Header.
-- **RBAC**: Middleware otorisasi bisa membatasi *endpoint* murni berdasar role (Admin, Mentor, Student).
-- **Service OBAC**: Di level `Service`, terdapat perlindungan *Ownership*. Sebuah API Endpoint diperbolehkan (tanpa terblokir 403 Forbidden) **TETAPI** service menolak memodifikasi sesuatu yang bukan mutlak milik pengguna (Contoh: Mentor A tidak bisa mengubah Nilai dari jadwal/pelajaran milik Mentor B).
+- **RBAC**: Middleware otorisasi membatasi *endpoint* berdasar role (Admin, Mentor, Student).
+- **Service OBAC**: Di level `Service`, terdapat perlindungan *Ownership*. Sebuah API Endpoint diperbolehkan (tanpa terblokir 403 Forbidden) **TETAPI** service menolak memodifikasi sesuatu yang bukan mutlak milik pengguna.

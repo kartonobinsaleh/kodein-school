@@ -9,6 +9,7 @@ const router = Router();
 
 // Retrieve classes
 router.get('/', authenticate, classController.getAll);
+router.get('/search', authenticate, classController.search);
 router.get('/:id', authenticate, classController.getById);
 
 // Create, Update, Delete classes (Admin only)

@@ -10,18 +10,18 @@ export const classService = {
     return classRepository.create(input);
   },
 
-  getAllClasses: async (search?: string, page?: string, limit?: string) => {
-    if (search || page || limit) {
-      logger.info(`Fetching paginated classes - Search: ${search}, Page: ${page}, Limit: ${limit}`);
-      const { skip, take, page: p, limit: l } = getPagination(page, limit);
-      const where = buildSearchFilter(search, ['name', 'level']);
-      const { data, total } = await classRepository.findAll({ where, skip, take });
-      return { data, meta: buildMeta(total, p, l) };
-    }
-
+  getAllClasses: async () => {
     logger.info('Fetching full class list (for select dropdowns)');
-    const { data, total } = await classRepository.findAll();
-    return { data, total };
+    const { data } = await classRepository.findAll();
+    return data;
+  },
+
+  searchClasses: async (search?: string, page?: string, limit?: string) => {
+    logger.info(`Searching classes - Search: ${search}, Page: ${page}, Limit: ${limit}`);
+    const { skip, take, page: p, limit: l } = getPagination(page, limit);
+    const where = buildSearchFilter(search, ['name', 'level']);
+    const { data, total } = await classRepository.findAll({ where, skip, take });
+    return { data, meta: buildMeta(total, p, l) };
   },
 
   getClassById: async (id: string) => {

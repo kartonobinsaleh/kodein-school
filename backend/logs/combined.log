@@ -386,3 +386,21 @@ undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata"
 undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:46:48"}}
 undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:46:57"}}
 undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:46:57"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:53:26"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:53:26"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:53:37"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:53:37"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:53:45"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:53:45"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:53:57"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:53:57"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:54:06"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:54:06"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:54:16"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:54:16"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:57:02"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:57:02"}}
+undefined [info] : Searching attendance - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:57:18"}}
+undefined [info] : GET /attendance/search?search=&page=1&limit=10 200 2658 - 171.085 ms {"metadata":{"timestamp":"2026-04-17 14:57:18"}}
+undefined [info] : Searching students - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:57:43"}}
+undefined [info] : GET /students/search?search=&page=1&limit=10 200 3100 - 39.181 ms {"metadata":{"timestamp":"2026-04-17 14:57:43"}}

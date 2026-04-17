@@ -15,11 +15,20 @@ export const classController = {
 
   getAll: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
+      const result = await classService.getAllClasses();
+      res.status(200).json({ success: true, data: result });
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  search: async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
       const search = req.query.search as string;
       const page = req.query.page as string;
       const limit = req.query.limit as string;
       
-      const result = await classService.getAllClasses(search, page, limit);
+      const result = await classService.searchClasses(search, page, limit);
       res.status(200).json({ 
         success: true, 
         data: result.data, 

@@ -10,18 +10,18 @@ export const subjectService = {
     return subjectRepository.create(input);
   },
 
-  getAllSubjects: async (search?: string, page?: string, limit?: string) => {
-    if (search || page || limit) {
-      logger.info(`Fetching paginated subjects - Search: ${search}, Page: ${page}, Limit: ${limit}`);
-      const { skip, take, page: p, limit: l } = getPagination(page, limit);
-      const where = buildSearchFilter(search, ['name']);
-      const { data, total } = await subjectRepository.findAll({ where, skip, take });
-      return { data, meta: buildMeta(total, p, l) };
-    }
-
+  getAllSubjects: async () => {
     logger.info('Fetching full subject list (for select dropdowns)');
-    const { data, total } = await subjectRepository.findAll();
-    return { data, total };
+    const { data } = await subjectRepository.findAll();
+    return data;
+  },
+
+  searchSubjects: async (search?: string, page?: string, limit?: string) => {
+    logger.info(`Searching subjects - Search: ${search}, Page: ${page}, Limit: ${limit}`);
+    const { skip, take, page: p, limit: l } = getPagination(page, limit);
+    const where = buildSearchFilter(search, ['name']);
+    const { data, total } = await subjectRepository.findAll({ where, skip, take });
+    return { data, meta: buildMeta(total, p, l) };
   },
 
   getSubjectById: async (id: string) => {

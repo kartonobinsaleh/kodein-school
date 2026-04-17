@@ -7,8 +7,9 @@ import { authorize } from '../../middleware/rbac.middleware';
 
 const router = Router();
 
-// Retrieve subjects (All logged-in users typically can view subjects)
+// Retrieve subjects
 router.get('/', authenticate, subjectController.getAll);
+router.get('/search', authenticate, subjectController.search);
 router.get('/:id', authenticate, subjectController.getById);
 
 // Create, Update, Delete subjects (Admin normally manages master data)
