@@ -162,12 +162,6 @@ export default function ActivityPage() {
               data={activities} 
               columns={columns} 
               emptyMessage="No activities found!"
-              meta={meta}
-              onPageChange={(p) => setPage(p)}
-              onLimitChange={(l) => {
-                setLimit(l);
-                setPage(1);
-              }}
             />
           )}
 

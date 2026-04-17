@@ -157,12 +157,6 @@ export default function CoursePage() {
               data={courses} 
               columns={columns} 
               emptyMessage="No courses found!"
-              meta={meta}
-              onPageChange={(p) => setPage(p)}
-              onLimitChange={(l) => {
-                setLimit(l);
-                setPage(1);
-              }}
             />
           )}
 

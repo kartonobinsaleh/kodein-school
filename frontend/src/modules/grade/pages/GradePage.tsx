@@ -148,12 +148,6 @@ export default function GradePage() {
               data={grades} 
               columns={columns} 
               emptyMessage="No grades found!"
-              meta={meta}
-              onPageChange={(p) => setPage(p)}
-              onLimitChange={(l) => {
-                setLimit(l);
-                setPage(1);
-              }}
             />
           )}
 

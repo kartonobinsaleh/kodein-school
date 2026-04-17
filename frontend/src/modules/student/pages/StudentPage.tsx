@@ -127,12 +127,6 @@ export default function StudentPage() {
               data={students} 
               columns={columns} 
               emptyMessage="No scholars found!"
-              meta={meta}
-              onPageChange={(p) => setPage(p)}
-              onLimitChange={(l) => {
-                setLimit(l);
-                setPage(1);
-              }}
             />
           )}
 

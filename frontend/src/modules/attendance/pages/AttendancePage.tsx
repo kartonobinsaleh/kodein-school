@@ -133,12 +133,6 @@ export default function AttendancePage() {
               data={attendances} 
               columns={columns} 
               emptyMessage="No attendance records found!"
-              meta={meta}
-              onPageChange={(p) => setPage(p)}
-              onLimitChange={(l) => {
-                setLimit(l);
-                setPage(1);
-              }}
             />
           )}
 

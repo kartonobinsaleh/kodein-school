@@ -166,12 +166,6 @@ export default function SubmissionPage() {
               data={submissions} 
               columns={columns} 
               emptyMessage="No submissions found!"
-              meta={meta}
-              onPageChange={(p) => setPage(p)}
-              onLimitChange={(l) => {
-                setLimit(l);
-                setPage(1);
-              }}
             />
           )}
 
