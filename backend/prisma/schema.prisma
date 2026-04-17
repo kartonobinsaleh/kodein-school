@@ -1,0 +1,197 @@
+// ─── Generator & Datasource ───────────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum Role {
+  ADMIN
+  MENTOR
+  STUDENT
+}
+
+enum ActivityType {
+  ASSIGNMENT
+  PROJECT
+  QUIZ
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  PERMIT
+}
+
+// ─── Models ───────────────────────────────────────────────────────────────────
+
+/// A system user. Role determines access level.
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // bcrypt hashed
+  role      Role
+
+  student   Student? // 1-to-1, only exists if role = STUDENT
+  courses   Course[] // courses this user mentors (role = MENTOR)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+/// Academic student profile, linked 1-to-1 with a User.
+model Student {
+  id     String  @id @default(cuid())
+  userId String  @unique
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  classId String?
+  class   Class?  @relation(fields: [classId], references: [id])
+
+  name String
+  nis  String? @unique // Nomor Induk Siswa
+  nisn String? @unique // Nomor Induk Siswa Nasional
+
+  enrollments Enrollment[]
+  submissions Submission[]
+  grades      Grade[]
+  attendances Attendance[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("students")
+}
+
+/// A school class (e.g. "X IPA 1").
+model Class {
+  id       String    @id @default(cuid())
+  name     String
+  level    String    // e.g. "X", "XI", "XII"
+  students Student[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("classes")
+}
+
+/// An academic subject (e.g. "Mathematics").
+model Subject {
+  id      String   @id @default(cuid())
+  name    String
+  courses Course[]
+  grades  Grade[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("subjects")
+}
+
+/// A course is a subject taught by a mentor, with enrolled students.
+model Course {
+  id        String  @id @default(cuid())
+  title     String
+  subjectId String
+  subject   Subject @relation(fields: [subjectId], references: [id])
+  mentorId  String
+  mentor    User    @relation(fields: [mentorId], references: [id])
+
+  activities  Activity[]
+  enrollments Enrollment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("courses")
+}
+
+/// Explicit join table — Student ↔ Course (many-to-many).
+model Enrollment {
+  id        String  @id @default(cuid())
+  studentId String
+  student   Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  courseId  String
+  course    Course  @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([studentId, courseId]) // prevent duplicate enrollment
+  @@map("enrollments")
+}
+
+/// An activity inside a course (assignment, project, or quiz).
+model Activity {
+  id          String       @id @default(cuid())
+  courseId    String
+  course      Course       @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  type        ActivityType
+
+  submissions Submission[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("activities")
+}
+
+/// A student's submission for an activity.
+model Submission {
+  id         String   @id @default(cuid())
+  activityId String
+  activity   Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  studentId  String
+  student    Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  content  String? // text-based answer
+  url      String? // link-based answer
+  score    Float?  // set by mentor
+  feedback String? // set by mentor
+
+  submittedAt DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([activityId, studentId]) // one submission per student per activity
+  @@map("submissions")
+}
+
+/// Final grade per student per subject. Entered manually by mentor.
+model Grade {
+  id        String  @id @default(cuid())
+  studentId String
+  student   Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subjectId String
+  subject   Subject @relation(fields: [subjectId], references: [id])
+
+  finalScore Float // manual input only — no auto-generation in MVP
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([studentId, subjectId]) // one grade per student per subject
+  @@map("grades")
+}
+
+/// Attendance record per student per session.
+model Attendance {
+  id        String           @id @default(cuid())
+  studentId String
+  student   Student          @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  date      DateTime         @db.Date
+  status    AttendanceStatus
+
+  createdAt DateTime @default(now())
+
+  @@unique([studentId, date]) // one record per student per day
+  @@map("attendances")
+}

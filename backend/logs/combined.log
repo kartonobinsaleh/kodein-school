@@ -1,0 +1,348 @@
+undefined [info] : 🚀 SIS Backend running on http://localhost:3000 {"metadata":{"timestamp":"2026-04-17 10:22:22"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 10:22:22"}}
+undefined [info] : GET / 404 139 - 6.221 ms {"metadata":{"timestamp":"2026-04-17 10:22:49"}}
+undefined [info] : GET /health 200 54 - 7.528 ms {"metadata":{"timestamp":"2026-04-17 10:22:51"}}
+undefined [info] : GET /favicon.ico 404 150 - 1.190 ms {"metadata":{"timestamp":"2026-04-17 10:22:51"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 10:23:51"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 10:23:51"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 11:05:08"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 11:05:08"}}
+undefined [info] : OPTIONS /auth/login 200 4 - 12.651 ms {"metadata":{"timestamp":"2026-04-17 11:08:31"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 11:09:44"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 11:09:44"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 11:10:14"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 11:10:14"}}
+undefined [info] : Login attempt for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 11:10:30"}}
+undefined [info] : Login successful for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 11:10:31"}}
+undefined [info] : POST /auth/login 200 346 - 379.845 ms {"metadata":{"timestamp":"2026-04-17 11:10:31"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 11:10:39"}}
+undefined [info] : GET /students 200 316 - 27.109 ms {"metadata":{"timestamp":"2026-04-17 11:10:39"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 11:10:41"}}
+undefined [info] : GET /courses 200 26 - 14.529 ms {"metadata":{"timestamp":"2026-04-17 11:10:41"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 11:10:43"}}
+undefined [info] : GET /activities 200 26 - 5.180 ms {"metadata":{"timestamp":"2026-04-17 11:10:43"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 11:10:44"}}
+undefined [info] : GET /submissions 200 26 - 5.702 ms {"metadata":{"timestamp":"2026-04-17 11:10:44"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 11:10:46"}}
+undefined [info] : GET /grades 200 26 - 3.657 ms {"metadata":{"timestamp":"2026-04-17 11:10:46"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 11:10:48"}}
+undefined [info] : GET /attendance 200 26 - 10.203 ms {"metadata":{"timestamp":"2026-04-17 11:10:48"}}
+undefined [info] : Login attempt for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 11:15:12"}}
+undefined [info] : Login successful for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 11:15:12"}}
+undefined [info] : POST /auth/login 200 346 - 110.083 ms {"metadata":{"timestamp":"2026-04-17 11:15:12"}}
+undefined [info] : Login attempt for email: mentor@kodein.com {"metadata":{"timestamp":"2026-04-17 11:15:25"}}
+undefined [info] : Login successful for email: mentor@kodein.com {"metadata":{"timestamp":"2026-04-17 11:15:25"}}
+undefined [info] : POST /auth/login 200 350 - 107.365 ms {"metadata":{"timestamp":"2026-04-17 11:15:25"}}
+undefined [info] : Login attempt for email: student@kodein.com {"metadata":{"timestamp":"2026-04-17 11:15:44"}}
+undefined [info] : Login successful for email: student@kodein.com {"metadata":{"timestamp":"2026-04-17 11:15:44"}}
+undefined [info] : POST /auth/login 200 353 - 110.699 ms {"metadata":{"timestamp":"2026-04-17 11:15:44"}}
+undefined [info] : Login attempt for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 11:18:05"}}
+undefined [info] : Login successful for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 11:18:05"}}
+undefined [info] : POST /auth/login 200 346 - 115.827 ms {"metadata":{"timestamp":"2026-04-17 11:18:05"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 11:28:59"}}
+undefined [info] : GET /students 304 - - 94.182 ms {"metadata":{"timestamp":"2026-04-17 11:28:59"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 11:29:05"}}
+undefined [info] : GET /courses 304 - - 12.620 ms {"metadata":{"timestamp":"2026-04-17 11:29:05"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 11:29:06"}}
+undefined [info] : GET /activities 304 - - 7.662 ms {"metadata":{"timestamp":"2026-04-17 11:29:06"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 11:29:07"}}
+undefined [info] : GET /submissions 304 - - 10.903 ms {"metadata":{"timestamp":"2026-04-17 11:29:07"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 11:29:13"}}
+undefined [info] : GET /grades 304 - - 9.772 ms {"metadata":{"timestamp":"2026-04-17 11:29:13"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 11:29:14"}}
+undefined [info] : GET /attendance 304 - - 7.085 ms {"metadata":{"timestamp":"2026-04-17 11:29:14"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 11:32:55"}}
+undefined [info] : GET /students 304 - - 95.095 ms {"metadata":{"timestamp":"2026-04-17 11:32:55"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 11:33:15"}}
+undefined [info] : GET /courses 304 - - 60.874 ms {"metadata":{"timestamp":"2026-04-17 11:33:15"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 11:33:15"}}
+undefined [info] : GET /activities 304 - - 24.575 ms {"metadata":{"timestamp":"2026-04-17 11:33:15"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 11:33:16"}}
+undefined [info] : GET /submissions 304 - - 4.897 ms {"metadata":{"timestamp":"2026-04-17 11:33:16"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 11:33:19"}}
+undefined [info] : GET /grades 304 - - 4.681 ms {"metadata":{"timestamp":"2026-04-17 11:33:19"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 11:33:20"}}
+undefined [info] : GET /attendance 304 - - 6.952 ms {"metadata":{"timestamp":"2026-04-17 11:33:20"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 11:40:13"}}
+undefined [info] : GET /courses 304 - - 148.963 ms {"metadata":{"timestamp":"2026-04-17 11:40:13"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 11:40:14"}}
+undefined [info] : GET /students 304 - - 5.598 ms {"metadata":{"timestamp":"2026-04-17 11:40:14"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 11:40:24"}}
+undefined [info] : GET /activities 304 - - 25.704 ms {"metadata":{"timestamp":"2026-04-17 11:40:24"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 11:40:25"}}
+undefined [info] : GET /submissions 304 - - 19.069 ms {"metadata":{"timestamp":"2026-04-17 11:40:25"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 11:40:26"}}
+undefined [info] : GET /grades 304 - - 12.742 ms {"metadata":{"timestamp":"2026-04-17 11:40:26"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 11:40:27"}}
+undefined [info] : GET /attendance 304 - - 5.505 ms {"metadata":{"timestamp":"2026-04-17 11:40:27"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 11:45:25"}}
+undefined [info] : GET /courses 304 - - 76.303 ms {"metadata":{"timestamp":"2026-04-17 11:45:25"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 11:47:16"}}
+undefined [info] : GET /courses 304 - - 54.205 ms {"metadata":{"timestamp":"2026-04-17 11:47:16"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 11:49:08"}}
+undefined [info] : GET /students 304 - - 74.806 ms {"metadata":{"timestamp":"2026-04-17 11:49:08"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 11:49:14"}}
+undefined [info] : GET /activities 304 - - 26.517 ms {"metadata":{"timestamp":"2026-04-17 11:49:14"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 11:49:15"}}
+undefined [info] : GET /submissions 304 - - 3.739 ms {"metadata":{"timestamp":"2026-04-17 11:49:15"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 11:49:16"}}
+undefined [info] : GET /grades 304 - - 4.108 ms {"metadata":{"timestamp":"2026-04-17 11:49:16"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 11:49:16"}}
+undefined [info] : GET /attendance 304 - - 5.841 ms {"metadata":{"timestamp":"2026-04-17 11:49:16"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:00:40"}}
+undefined [info] : GET /courses 304 - - 93.568 ms {"metadata":{"timestamp":"2026-04-17 12:00:40"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:03:38"}}
+undefined [info] : GET /courses 304 - - 49.330 ms {"metadata":{"timestamp":"2026-04-17 12:03:38"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:25:59"}}
+undefined [info] : GET /courses 304 - - 109.897 ms {"metadata":{"timestamp":"2026-04-17 12:26:00"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:26:03"}}
+undefined [info] : GET /students 304 - - 182.497 ms {"metadata":{"timestamp":"2026-04-17 12:26:03"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:26:30"}}
+undefined [info] : GET /students 304 - - 195.171 ms {"metadata":{"timestamp":"2026-04-17 12:26:30"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:26:32"}}
+undefined [info] : GET /students 304 - - 19.339 ms {"metadata":{"timestamp":"2026-04-17 12:26:32"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:26:36"}}
+undefined [info] : GET /students - - - - ms {"metadata":{"timestamp":"2026-04-17 12:26:36"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:26:37"}}
+undefined [info] : GET /students 200 316 - 6.569 ms {"metadata":{"timestamp":"2026-04-17 12:26:37"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:27:11"}}
+undefined [info] : GET /students 304 - - 43.329 ms {"metadata":{"timestamp":"2026-04-17 12:27:11"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:27:30"}}
+undefined [info] : GET /students 304 - - 25.073 ms {"metadata":{"timestamp":"2026-04-17 12:27:30"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:27:56"}}
+undefined [info] : GET /students 304 - - 166.462 ms {"metadata":{"timestamp":"2026-04-17 12:27:56"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:28:08"}}
+undefined [info] : GET /students 304 - - 19.502 ms {"metadata":{"timestamp":"2026-04-17 12:28:08"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:28:19"}}
+undefined [info] : GET /students 304 - - 33.986 ms {"metadata":{"timestamp":"2026-04-17 12:28:19"}}
+undefined [info] : Login attempt for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 12:31:03"}}
+undefined [info] : Login successful for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 12:31:03"}}
+undefined [info] : POST /auth/login 200 346 - 126.206 ms {"metadata":{"timestamp":"2026-04-17 12:31:03"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:31:06"}}
+undefined [info] : GET /courses 304 - - 24.758 ms {"metadata":{"timestamp":"2026-04-17 12:31:06"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:31:07"}}
+undefined [info] : GET /activities 304 - - 7.680 ms {"metadata":{"timestamp":"2026-04-17 12:31:07"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 12:31:08"}}
+undefined [info] : GET /submissions 304 - - 8.093 ms {"metadata":{"timestamp":"2026-04-17 12:31:08"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 12:31:09"}}
+undefined [info] : GET /grades 304 - - 6.850 ms {"metadata":{"timestamp":"2026-04-17 12:31:09"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 12:31:10"}}
+undefined [info] : GET /attendance 304 - - 5.793 ms {"metadata":{"timestamp":"2026-04-17 12:31:10"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:33:54"}}
+undefined [info] : GET /students 304 - - 197.245 ms {"metadata":{"timestamp":"2026-04-17 12:33:55"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:34:11"}}
+undefined [info] : GET /students 304 - - 37.472 ms {"metadata":{"timestamp":"2026-04-17 12:34:11"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:34:43"}}
+undefined [info] : GET /courses 304 - - 67.330 ms {"metadata":{"timestamp":"2026-04-17 12:34:43"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:34:49"}}
+undefined [info] : GET /activities 304 - - 12.646 ms {"metadata":{"timestamp":"2026-04-17 12:34:49"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 12:34:50"}}
+undefined [info] : GET /submissions 304 - - 5.126 ms {"metadata":{"timestamp":"2026-04-17 12:34:50"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 12:34:55"}}
+undefined [info] : GET /grades 304 - - 4.111 ms {"metadata":{"timestamp":"2026-04-17 12:34:55"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 12:34:58"}}
+undefined [info] : GET /attendance 304 - - 4.672 ms {"metadata":{"timestamp":"2026-04-17 12:34:58"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:39:15"}}
+undefined [info] : GET /students 304 - - 45.807 ms {"metadata":{"timestamp":"2026-04-17 12:39:15"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 12:40:02"}}
+undefined [info] : GET /submissions 304 - - 69.055 ms {"metadata":{"timestamp":"2026-04-17 12:40:02"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:40:05"}}
+undefined [info] : GET /activities 304 - - 7.467 ms {"metadata":{"timestamp":"2026-04-17 12:40:05"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:40:08"}}
+undefined [info] : GET /courses 304 - - 10.292 ms {"metadata":{"timestamp":"2026-04-17 12:40:08"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 12:40:13"}}
+undefined [info] : GET /attendance 304 - - 16.913 ms {"metadata":{"timestamp":"2026-04-17 12:40:13"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 12:40:15"}}
+undefined [info] : GET /grades 304 - - 5.006 ms {"metadata":{"timestamp":"2026-04-17 12:40:15"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:40:38"}}
+undefined [info] : GET /activities 304 - - 25.554 ms {"metadata":{"timestamp":"2026-04-17 12:40:38"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:40:39"}}
+undefined [info] : GET /activities 304 - - 4.580 ms {"metadata":{"timestamp":"2026-04-17 12:40:39"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 12:40:42"}}
+undefined [info] : GET /submissions 304 - - 13.065 ms {"metadata":{"timestamp":"2026-04-17 12:40:42"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 12:40:44"}}
+undefined [info] : GET /submissions 304 - - 12.152 ms {"metadata":{"timestamp":"2026-04-17 12:40:44"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 12:40:46"}}
+undefined [info] : GET /grades 304 - - 5.651 ms {"metadata":{"timestamp":"2026-04-17 12:40:46"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 12:40:48"}}
+undefined [info] : GET /grades 304 - - 4.424 ms {"metadata":{"timestamp":"2026-04-17 12:40:48"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 12:40:49"}}
+undefined [info] : GET /attendance 304 - - 3.569 ms {"metadata":{"timestamp":"2026-04-17 12:40:49"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 12:40:51"}}
+undefined [info] : GET /attendance 304 - - 3.517 ms {"metadata":{"timestamp":"2026-04-17 12:40:51"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:40:57"}}
+undefined [info] : GET /students 304 - - 7.058 ms {"metadata":{"timestamp":"2026-04-17 12:40:57"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:40:59"}}
+undefined [info] : GET /students 304 - - 5.058 ms {"metadata":{"timestamp":"2026-04-17 12:40:59"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:41:00"}}
+undefined [info] : GET /courses 304 - - 7.386 ms {"metadata":{"timestamp":"2026-04-17 12:41:00"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:41:02"}}
+undefined [info] : GET /courses 304 - - 5.628 ms {"metadata":{"timestamp":"2026-04-17 12:41:02"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:42:19"}}
+undefined [info] : GET /courses 304 - - 53.073 ms {"metadata":{"timestamp":"2026-04-17 12:42:19"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:42:21"}}
+undefined [info] : GET /courses 304 - - 6.589 ms {"metadata":{"timestamp":"2026-04-17 12:42:21"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:42:22"}}
+undefined [info] : GET /courses 304 - - 3.823 ms {"metadata":{"timestamp":"2026-04-17 12:42:22"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:42:23"}}
+undefined [info] : GET /courses 304 - - 4.339 ms {"metadata":{"timestamp":"2026-04-17 12:42:23"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:42:25"}}
+undefined [info] : GET /activities 304 - - 9.552 ms {"metadata":{"timestamp":"2026-04-17 12:42:25"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:42:26"}}
+undefined [info] : GET /activities 304 - - 3.590 ms {"metadata":{"timestamp":"2026-04-17 12:42:26"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:42:28"}}
+undefined [info] : GET /students 304 - - 5.322 ms {"metadata":{"timestamp":"2026-04-17 12:42:28"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:42:30"}}
+undefined [info] : GET /students 304 - - 7.790 ms {"metadata":{"timestamp":"2026-04-17 12:42:30"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:43:51"}}
+undefined [info] : GET /students 304 - - 29.713 ms {"metadata":{"timestamp":"2026-04-17 12:43:51"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:43:52"}}
+undefined [info] : GET /students 304 - - 7.476 ms {"metadata":{"timestamp":"2026-04-17 12:43:52"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:43:53"}}
+undefined [info] : GET /students 304 - - 3.654 ms {"metadata":{"timestamp":"2026-04-17 12:43:53"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:43:57"}}
+undefined [info] : GET /courses 304 - - 8.015 ms {"metadata":{"timestamp":"2026-04-17 12:43:57"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 12:43:59"}}
+undefined [info] : GET /submissions 304 - - 8.783 ms {"metadata":{"timestamp":"2026-04-17 12:43:59"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 12:44:00"}}
+undefined [info] : GET /grades 304 - - 4.133 ms {"metadata":{"timestamp":"2026-04-17 12:44:00"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 12:44:02"}}
+undefined [info] : GET /attendance 304 - - 7.050 ms {"metadata":{"timestamp":"2026-04-17 12:44:02"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:44:05"}}
+undefined [info] : GET /activities 304 - - 10.690 ms {"metadata":{"timestamp":"2026-04-17 12:44:05"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:44:08"}}
+undefined [info] : GET /students 304 - - 9.079 ms {"metadata":{"timestamp":"2026-04-17 12:44:08"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:45:01"}}
+undefined [info] : GET /activities 304 - - 25.601 ms {"metadata":{"timestamp":"2026-04-17 12:45:01"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:45:26"}}
+undefined [info] : GET /students 304 - - 33.340 ms {"metadata":{"timestamp":"2026-04-17 12:45:26"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:45:55"}}
+undefined [info] : GET /courses 304 - - 29.532 ms {"metadata":{"timestamp":"2026-04-17 12:45:55"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 12:45:57"}}
+undefined [info] : GET /submissions 304 - - 9.527 ms {"metadata":{"timestamp":"2026-04-17 12:45:57"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 12:45:58"}}
+undefined [info] : GET /grades 304 - - 10.427 ms {"metadata":{"timestamp":"2026-04-17 12:45:58"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 12:45:59"}}
+undefined [info] : GET /attendance 304 - - 5.068 ms {"metadata":{"timestamp":"2026-04-17 12:45:59"}}
+undefined [info] : Login attempt for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 12:48:07"}}
+undefined [info] : Login successful for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 12:48:07"}}
+undefined [info] : POST /auth/login 200 346 - 119.274 ms {"metadata":{"timestamp":"2026-04-17 12:48:07"}}
+undefined [info] : Login attempt for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 12:53:29"}}
+undefined [info] : Login successful for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 12:53:29"}}
+undefined [info] : POST /auth/login 200 346 - 135.341 ms {"metadata":{"timestamp":"2026-04-17 12:53:29"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 12:53:31"}}
+undefined [info] : GET /students 304 - - 11.984 ms {"metadata":{"timestamp":"2026-04-17 12:53:31"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 12:53:48"}}
+undefined [info] : GET /courses 304 - - 26.416 ms {"metadata":{"timestamp":"2026-04-17 12:53:48"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 12:54:00"}}
+undefined [info] : GET /activities 304 - - 28.147 ms {"metadata":{"timestamp":"2026-04-17 12:54:00"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 12:54:01"}}
+undefined [info] : GET /submissions 304 - - 33.891 ms {"metadata":{"timestamp":"2026-04-17 12:54:01"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 12:54:03"}}
+undefined [info] : GET /grades 304 - - 6.378 ms {"metadata":{"timestamp":"2026-04-17 12:54:03"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 12:54:08"}}
+undefined [info] : GET /attendance 304 - - 11.276 ms {"metadata":{"timestamp":"2026-04-17 12:54:08"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 13:17:09"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 13:17:09"}}
+undefined [info] : Login attempt for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 13:19:06"}}
+undefined [info] : Login successful for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 13:19:06"}}
+undefined [info] : POST /auth/login 200 346 - 204.821 ms {"metadata":{"timestamp":"2026-04-17 13:19:07"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 13:19:10"}}
+undefined [info] : GET /students 304 - - 42.103 ms {"metadata":{"timestamp":"2026-04-17 13:19:10"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 13:19:10"}}
+undefined [info] : GET /courses 304 - - 21.026 ms {"metadata":{"timestamp":"2026-04-17 13:19:10"}}
+undefined [info] : Fetching all activities {"metadata":{"timestamp":"2026-04-17 13:19:12"}}
+undefined [info] : GET /activities 304 - - 6.029 ms {"metadata":{"timestamp":"2026-04-17 13:19:12"}}
+undefined [info] : Fetching all submissions {"metadata":{"timestamp":"2026-04-17 13:19:15"}}
+undefined [info] : GET /submissions 304 - - 8.949 ms {"metadata":{"timestamp":"2026-04-17 13:19:15"}}
+undefined [info] : Fetching all grades {"metadata":{"timestamp":"2026-04-17 13:19:16"}}
+undefined [info] : GET /grades 304 - - 6.490 ms {"metadata":{"timestamp":"2026-04-17 13:19:16"}}
+undefined [info] : Fetching all attendance records {"metadata":{"timestamp":"2026-04-17 13:19:17"}}
+undefined [info] : GET /attendance 304 - - 5.622 ms {"metadata":{"timestamp":"2026-04-17 13:19:17"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 13:24:31"}}
+undefined [info] : GET /students 304 - - 513.951 ms {"metadata":{"timestamp":"2026-04-17 13:24:31"}}
+undefined [info] : Fetching all courses {"metadata":{"timestamp":"2026-04-17 13:26:45"}}
+undefined [info] : GET /courses 304 - - 112.036 ms {"metadata":{"timestamp":"2026-04-17 13:26:45"}}
+undefined [info] : Fetching all students {"metadata":{"timestamp":"2026-04-17 13:29:39"}}
+undefined [info] : GET /students 304 - - 1689.096 ms {"metadata":{"timestamp":"2026-04-17 13:29:41"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 13:54:34"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 13:54:34"}}
+undefined [info] : Login attempt for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 13:55:47"}}
+undefined [info] : Login successful for email: admin@kodein.com {"metadata":{"timestamp":"2026-04-17 13:55:47"}}
+undefined [info] : POST /auth/login 200 346 - 211.503 ms {"metadata":{"timestamp":"2026-04-17 13:55:47"}}
+undefined [info] : Fetching full student list (for select dropdowns) {"metadata":{"timestamp":"2026-04-17 13:55:50"}}
+undefined [info] : GET /students 304 - - 22.484 ms {"metadata":{"timestamp":"2026-04-17 13:55:50"}}
+undefined [info] : Fetching full student list (for select dropdowns) {"metadata":{"timestamp":"2026-04-17 14:03:24"}}
+undefined [info] : GET /students 304 - - 65.749 ms {"metadata":{"timestamp":"2026-04-17 14:03:24"}}
+undefined [info] : Fetching full course list (for select dropdowns) {"metadata":{"timestamp":"2026-04-17 14:03:27"}}
+undefined [info] : GET /courses 304 - - 15.666 ms {"metadata":{"timestamp":"2026-04-17 14:03:27"}}
+undefined [info] : Fetching full activity list (for select dropdowns) {"metadata":{"timestamp":"2026-04-17 14:03:28"}}
+undefined [info] : GET /activities 304 - - 5.917 ms {"metadata":{"timestamp":"2026-04-17 14:03:28"}}
+undefined [info] : Fetching full submission list {"metadata":{"timestamp":"2026-04-17 14:03:30"}}
+undefined [info] : GET /submissions 304 - - 6.149 ms {"metadata":{"timestamp":"2026-04-17 14:03:30"}}
+undefined [info] : Fetching full grade list {"metadata":{"timestamp":"2026-04-17 14:03:31"}}
+undefined [info] : GET /grades 304 - - 11.901 ms {"metadata":{"timestamp":"2026-04-17 14:03:31"}}
+undefined [info] : Fetching full attendance list {"metadata":{"timestamp":"2026-04-17 14:03:32"}}
+undefined [info] : GET /attendance 304 - - 7.967 ms {"metadata":{"timestamp":"2026-04-17 14:03:32"}}
+undefined [info] : Fetching full attendance list {"metadata":{"timestamp":"2026-04-17 14:05:57"}}
+undefined [info] : GET /attendance 304 - - 37.027 ms {"metadata":{"timestamp":"2026-04-17 14:05:57"}}
+undefined [info] : Fetching paginated students - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:07:18"}}
+undefined [info] : GET /students?search=&page=1&limit=10 200 370 - 118.031 ms {"metadata":{"timestamp":"2026-04-17 14:07:18"}}
+undefined [info] : Fetching full course list (for select dropdowns) {"metadata":{"timestamp":"2026-04-17 14:08:31"}}
+undefined [info] : GET /courses 304 - - 97.198 ms {"metadata":{"timestamp":"2026-04-17 14:08:31"}}
+undefined [info] : Fetching full activity list (for select dropdowns) {"metadata":{"timestamp":"2026-04-17 14:08:32"}}
+undefined [info] : GET /activities 304 - - 8.508 ms {"metadata":{"timestamp":"2026-04-17 14:08:32"}}
+undefined [info] : Fetching paginated students - Search: , Page: 1, Limit: 25 {"metadata":{"timestamp":"2026-04-17 14:10:57"}}
+undefined [info] : GET /students?search=&page=1&limit=25 200 370 - 30.516 ms {"metadata":{"timestamp":"2026-04-17 14:10:57"}}
+undefined [info] : Fetching paginated students - Search: s, Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:11:19"}}
+undefined [info] : GET /students?search=s&page=1&limit=10 200 370 - 59.274 ms {"metadata":{"timestamp":"2026-04-17 14:11:19"}}
+undefined [info] : Fetching paginated students - Search: ss, Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:11:21"}}
+undefined [info] : GET /students?search=ss&page=1&limit=10 200 80 - 8.604 ms {"metadata":{"timestamp":"2026-04-17 14:11:21"}}
+undefined [info] : Fetching paginated students - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:12:19"}}
+undefined [info] : GET /students?search=&page=1&limit=10 304 - - 154.816 ms {"metadata":{"timestamp":"2026-04-17 14:12:19"}}
+undefined [info] : Fetching full course list (for select dropdowns) {"metadata":{"timestamp":"2026-04-17 14:13:51"}}
+undefined [info] : GET /courses 304 - - 86.465 ms {"metadata":{"timestamp":"2026-04-17 14:13:51"}}
+undefined [info] : Fetching full activity list (for select dropdowns) {"metadata":{"timestamp":"2026-04-17 14:13:52"}}
+undefined [info] : GET /activities 304 - - 7.612 ms {"metadata":{"timestamp":"2026-04-17 14:13:52"}}
+undefined [info] : Fetching full submission list {"metadata":{"timestamp":"2026-04-17 14:15:53"}}
+undefined [info] : GET /submissions 304 - - 45.664 ms {"metadata":{"timestamp":"2026-04-17 14:15:53"}}
+undefined [info] : Fetching full grade list {"metadata":{"timestamp":"2026-04-17 14:15:53"}}
+undefined [info] : GET /grades 304 - - 5.778 ms {"metadata":{"timestamp":"2026-04-17 14:15:53"}}
+undefined [info] : Fetching full attendance list {"metadata":{"timestamp":"2026-04-17 14:15:54"}}
+undefined [info] : GET /attendance 304 - - 8.477 ms {"metadata":{"timestamp":"2026-04-17 14:15:54"}}
+undefined [info] : Fetching paginated students - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:17:25"}}
+undefined [info] : GET /students?search=&page=1&limit=10 304 - - 106.611 ms {"metadata":{"timestamp":"2026-04-17 14:17:25"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:18:56"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:18:56"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:19:03"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:19:03"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:19:18"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:19:18"}}
+undefined [info] : Fetching full list of all students (for dropdowns) {"metadata":{"timestamp":"2026-04-17 14:19:36"}}
+undefined [info] : GET /students 304 - - 124.047 ms {"metadata":{"timestamp":"2026-04-17 14:19:36"}}
+undefined [info] : Searching students - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:19:53"}}
+undefined [info] : GET /students/search?search=&page=1&limit=10 200 370 - 53.343 ms {"metadata":{"timestamp":"2026-04-17 14:19:53"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:20:00"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:20:00"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:20:08"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:20:08"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:20:16"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:20:16"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:21:12"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:21:12"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:22:10"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:22:10"}}
+undefined [info] : 🚀 SIS Backend running on http://localhost:4000 {"metadata":{"timestamp":"2026-04-17 14:22:23"}}
+undefined [info] :    ENV: development {"metadata":{"timestamp":"2026-04-17 14:22:23"}}
+undefined [info] : Searching students - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:31:55"}}
+undefined [info] : GET /students/search?search=&page=1&limit=10 304 - - 254.735 ms {"metadata":{"timestamp":"2026-04-17 14:31:55"}}
+undefined [info] : Searching courses - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:32:00"}}
+undefined [info] : GET /courses/search?search=&page=1&limit=10 200 80 - 25.722 ms {"metadata":{"timestamp":"2026-04-17 14:32:00"}}
+undefined [info] : Searching activities - Search: , Page: 1, Limit: 10 {"metadata":{"timestamp":"2026-04-17 14:32:16"}}
+undefined [info] : GET /activities/search?search=&page=1&limit=10 200 80 - 30.240 ms {"metadata":{"timestamp":"2026-04-17 14:32:16"}}
+undefined [info] : Fetching full submission list {"metadata":{"timestamp":"2026-04-17 14:32:37"}}
+undefined [info] : GET /submissions 304 - - 30.300 ms {"metadata":{"timestamp":"2026-04-17 14:32:37"}}
+undefined [info] : Fetching full grade list {"metadata":{"timestamp":"2026-04-17 14:32:40"}}
+undefined [info] : GET /grades 304 - - 13.442 ms {"metadata":{"timestamp":"2026-04-17 14:32:40"}}
+undefined [info] : Fetching full attendance list {"metadata":{"timestamp":"2026-04-17 14:34:29"}}
+undefined [info] : GET /attendance 304 - - 29.079 ms {"metadata":{"timestamp":"2026-04-17 14:34:29"}}

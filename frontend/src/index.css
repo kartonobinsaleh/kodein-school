@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Outfit", sans-serif;
+  
+  --color-primary: #46178f;
+  --color-success: #26890c;
+  --color-warning: #ffa602;
+  --color-danger: #eb008b;
+
+  --color-primary-light: #5e2ca8;
+  --color-success-light: #32a813;
+  --color-warning-light: #ffba33;
+  --color-danger-light: #ff1a9b;
+  
+  --color-dark-bg: #0e0d1b;
+  --color-dark-card: #1e1d32;
+  --color-dark-border: #2d2b4a;
+  --color-dark-text: #f8f9fa;
+  --color-dark-muted: #6b7280;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --text-sm: 0.8125rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+}
+
+/* Force class strategy in Tailwind 4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans antialiased transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-dark-bg text-dark-text;
+    background-color: var(--color-dark-bg) !important;
+  }
+}
+
+@layer components {
+  .animate-width-alternate {
+    animation: width-alternate 1.5s ease-in-out infinite;
+  }
+
+  @keyframes width-alternate {
+    0% { width: 0%; transform: translateX(-100%); }
+    50% { width: 70%; transform: translateX(20%); }
+    100% { width: 0%; transform: translateX(200%); }
+  }
+
+  .animate-width {
+    animation: width 1s ease-out forwards;
+  }
+  
+  @keyframes width {
+    from { width: 0; }
+    to { width: var(--progress-width, 100%); }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
