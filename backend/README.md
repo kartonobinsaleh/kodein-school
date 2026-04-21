@@ -32,13 +32,18 @@ cp .env.example .env
 Isi nilai `.env` dengan kredensial database Anda (Sangat disarankan menggunakan port `4000` agar tidak bentrok dengan frontend Next.js di `3000`).
 
 ### 4. Database Setup (Prisma & Seeding)
-Jika ini adalah pertama kali Anda mengatur *project*, wajib mereplikasi schema ke database, men-generate client, lalu mengisi data dummy:
+Jika ini adalah pertama kali Anda mengatur *project*, lakukan migrasi schema ke database, men-generate client, lalu mengisi data dummy:
 ```bash
+# Untuk sinkronisasi schema dan membuat file migration (Disarankan)
+npx prisma migrate dev --name init
+
+# ATAU jika hanya ingin push schema tanpa file migration (Prototyping)
 npx prisma db push
+
 npx prisma generate
 npm run seed
 ```
-*Note: Script seed akan menghapus data lama dan membuat 25+ record baru (Student, Course, Activity, dsb).*
+*Note: `migrate dev` akan membuat folder `prisma/migrations` untuk melacak perubahan database secara terstruktur. Script seed akan menghapus data lama dan membuat 25+ record baru.*
 
 ### 5. Jalankan Server!
 ```bash
