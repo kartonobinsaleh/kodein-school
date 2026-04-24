@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAuthStore } from '@/store/authStore';
 
 interface ProtectedRouteProps {
@@ -6,9 +6,18 @@ interface ProtectedRouteProps {
 }
 
 export default function ProtectedRoute({ allowedRoles }: ProtectedRouteProps) {
-  const { isAuthenticated, user } = useAuthStore();
+  const location = useLocation(); // Force re-check on every navigation
+  const { isAuthenticated, user, logout } = useAuthStore();
+  const token = localStorage.getItem('token');
 
-  if (!isAuthenticated) {
+  // If session mismatch (store says logged in but token is gone)
+  // we must force logout to clear the store and avoid redirect loops
+  if (isAuthenticated && !token) {
+    logout();
+    return <Navigate to="/login" replace />;
+  }
+
+  if (!isAuthenticated || !token) {
     return <Navigate to="/login" replace />;
   }
 

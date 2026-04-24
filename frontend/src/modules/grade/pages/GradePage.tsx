@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useGradeSearch } from '../hooks/useGrades';
 import type { Grade } from '../types';
-import { Card, Button, Badge, CardGridSkeleton, DataTable, Column, SearchToolbar, Pagination } from '@/components/ui';
+import { Card, Button, Badge, PageSkeleton, CardGridSkeleton, TableSkeleton, DataTable, Column, SearchToolbar, Pagination } from '@/components/ui';
 import { ErrorState, EmptyState } from '@/components/feedback';
 
 function getPredicate(score: number): { label: string; css: 'success' | 'primary' | 'warning' | 'danger'; emoji: string } {
@@ -18,7 +18,7 @@ export default function GradePage() {
   const [limit, setLimit] = useState(10);
   
   // Data Fetching
-  const { data: response, isLoading, isError } = useGradeSearch({ search, page, limit });
+  const { data: response, isLoading, isFetching, isError } = useGradeSearch({ search, page, limit });
   
   // UI State
   const [viewMode, setViewMode] = useState<'card' | 'table'>('card');
@@ -65,22 +65,14 @@ export default function GradePage() {
     },
   ], []);
 
-  if (isLoading) {
-    return (
-      <div className="space-y-8">
-        <div className="flex justify-between items-center">
-          <div className="h-12 w-48 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-xl" />
-          <div className="h-12 w-32 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-xl" />
-        </div>
-        <CardGridSkeleton count={6} />
-      </div>
-    );
+  if (isLoading && !response) {
+    return <PageSkeleton viewMode={viewMode} />;
   }
 
   if (isError) return <ErrorState message="The scoreboard is offline!" />;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 animate-fade-in-up">
       {/* Header Section with Animated Dot */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
@@ -108,7 +100,9 @@ export default function GradePage() {
       />
 
       {/* Main Content Area */}
-      {grades.length === 0 ? (
+      {isFetching ? (
+        viewMode === 'card' ? <CardGridSkeleton count={limit} /> : <TableSkeleton />
+      ) : grades.length === 0 ? (
         <EmptyState message="Stadium is empty! No grades found." emoji="🏟️" />
       ) : (
         <div className="space-y-10">

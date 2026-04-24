@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useActivitySearch, useDeleteActivity } from '../hooks/useActivities';
 import type { Activity, ActivityType } from '../types';
-import { Card, Button, Badge, DataTable, Column, SearchToolbar, Pagination } from '@/components/ui';
+import { Card, Button, Badge, DataTable, Column, SearchToolbar, Pagination, PageSkeleton, CardGridSkeleton, TableSkeleton } from '@/components/ui';
 import { ErrorState, EmptyState, ConfirmDialog } from '@/components/feedback';
 
 const TYPE_CONFIG: Record<ActivityType, { color: 'primary' | 'success' | 'warning' | 'danger', icon: string, label: string }> = {
@@ -17,7 +17,7 @@ export default function ActivityPage() {
   const [limit, setLimit] = useState(10);
   
   // Data Fetching
-  const { data: response, isLoading, isError } = useActivitySearch({ search, page, limit });
+  const { data: response, isLoading, isFetching, isError } = useActivitySearch({ search, page, limit });
   const { mutate: deleteActivity } = useDeleteActivity();
   
   // UI State
@@ -76,24 +76,14 @@ export default function ActivityPage() {
     },
   ], []);
 
-  if (isLoading) {
-    return (
-      <div className="space-y-8">
-        <div className="flex justify-between items-center">
-          <div className="h-12 w-48 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-xl" />
-          <div className="h-12 w-32 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-xl" />
-        </div>
-        <Card className="p-0 overflow-hidden">
-          <div className="h-64 bg-gray-50 dark:bg-gray-800/10 animate-pulse" />
-        </Card>
-      </div>
-    );
+  if (isLoading && !response) {
+    return <PageSkeleton viewMode={viewMode} />;
   }
 
   if (isError) return <ErrorState />;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 animate-fade-in-up">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
@@ -121,7 +111,9 @@ export default function ActivityPage() {
       />
 
       {/* Content Area */}
-      {activities.length === 0 ? (
+      {isFetching ? (
+        viewMode === 'card' ? <CardGridSkeleton count={limit} /> : <TableSkeleton />
+      ) : activities.length === 0 ? (
         <EmptyState message="Quest log is empty!" emoji="🌱" />
       ) : (
         <div className="space-y-10">

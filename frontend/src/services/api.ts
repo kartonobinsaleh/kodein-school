@@ -18,7 +18,13 @@ api.interceptors.request.use((config) => {
 
 // Response Interceptor – handle 401 globally
 api.interceptors.response.use(
-  (response) => response,
+  async (response) => {
+    // Artificial delay for local development to see skeletons
+    if (import.meta.env.DEV) {
+      await new Promise(resolve => setTimeout(resolve, 800));
+    }
+    return response;
+  },
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('token');
