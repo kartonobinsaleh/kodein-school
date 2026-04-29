@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useUserSearch, useDeleteUser, useUpdateUser, useCreateUser } from '../hooks/useUsers';
 import { User, UserRole } from '../types';
-import { Card, Badge, DataTable, Column, SearchToolbar, Pagination, Button, Input, Modal } from '@/components/ui';
+import { Card, Badge, DataTable, Column, SearchToolbar, Pagination, Button, Input, Modal, PageSkeleton, CardGridSkeleton, TableSkeleton } from '@/components/ui';
 import { ErrorState, EmptyState, ConfirmDialog } from '@/components/feedback';
 
 export default function UserPage() {
@@ -16,7 +16,7 @@ export default function UserPage() {
   const [formData, setFormData] = useState({ email: '', password: '', role: 'STUDENT' as UserRole });
   const [editFormData, setEditFormData] = useState({ email: '', password: '' });
 
-  const { data: response, isLoading, isError } = useUserSearch({ search, page, limit });
+  const { data: response, isLoading, isFetching, isError } = useUserSearch({ search, page, limit });
   const { mutate: deleteUser } = useDeleteUser();
   const { mutate: updateUser } = useUpdateUser();
   const { mutate: createUser, isPending: isCreating } = useCreateUser();
@@ -129,10 +129,14 @@ export default function UserPage() {
     },
   ], [updateUser]);
 
+  if (isLoading && !response) {
+    return <PageSkeleton viewMode={viewMode} />;
+  }
+
   if (isError) return <ErrorState message="Authentication database is unreachable!" />;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 animate-fade-in-up">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 tracking-tight">IDENTITY MANAGEMENT 🔑</h2>
@@ -160,7 +164,9 @@ export default function UserPage() {
         placeholder="Search users by email or role..."
       />
 
-      {users.length === 0 && !isLoading ? (
+      {isFetching ? (
+        viewMode === 'card' ? <CardGridSkeleton count={limit} /> : <TableSkeleton />
+      ) : users.length === 0 ? (
         <EmptyState message="No users found in the arena!" emoji="👤" />
       ) : (
         <div className="space-y-10">
@@ -214,7 +220,6 @@ export default function UserPage() {
             <DataTable 
               data={users} 
               columns={columns} 
-              isLoading={isLoading}
             />
           )}
 

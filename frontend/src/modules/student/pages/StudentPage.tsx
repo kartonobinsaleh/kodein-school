@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useStudentSearch, useDeleteStudent } from '../hooks/useStudents';
 import type { Student } from '../types';
-import { Button, CardGridSkeleton, DataTable, Column, Badge, Pagination, SearchToolbar } from '@/components/ui';
+import { Button, PageSkeleton, CardGridSkeleton, TableSkeleton, DataTable, Column, Badge, Pagination, SearchToolbar } from '@/components/ui';
 import { ErrorState, EmptyState, ConfirmDialog } from '@/components/feedback';
 import { StudentCard } from '../components';
 
@@ -14,7 +14,7 @@ export default function StudentPage() {
   const [limit, setLimit] = useState(10);
   
   // Data Fetching
-  const { data: response, isLoading, isError } = useStudentSearch({ search, page, limit });
+  const { data: response, isLoading, isFetching, isError } = useStudentSearch({ search, page, limit });
   const { mutate: deleteStudent } = useDeleteStudent();
   
   // UI State
@@ -64,22 +64,14 @@ export default function StudentPage() {
     },
   ], []);
 
-  if (isLoading) {
-    return (
-      <div className="space-y-8">
-        <div className="flex justify-between items-center">
-          <div className="h-12 w-48 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-xl" />
-          <div className="h-12 w-32 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-xl" />
-        </div>
-        <CardGridSkeleton count={6} />
-      </div>
-    );
+  if (isLoading && !response) {
+    return <PageSkeleton viewMode={viewMode} />;
   }
 
   if (isError) return <ErrorState />;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 animate-fade-in-up">
       {/* Header Profile Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
@@ -89,7 +81,6 @@ export default function StudentPage() {
             {meta?.total ?? 0} Scholars Authorized
           </p>
         </div>
-        {/* Updated Button Variant to Success (Green) */}
         <Button variant="success" className="!px-8 h-[54px] shadow-lg shadow-success/20">
           + ENROLL NEW SCHOLAR
         </Button>
@@ -108,7 +99,9 @@ export default function StudentPage() {
       />
 
       {/* Main Content Dynamic Display */}
-      {students.length === 0 ? (
+      {isFetching ? (
+        viewMode === 'card' ? <CardGridSkeleton count={limit} /> : <TableSkeleton />
+      ) : students.length === 0 ? (
         <EmptyState message="No scholars found!" emoji="🏜️" />
       ) : (
         <div className="space-y-10">

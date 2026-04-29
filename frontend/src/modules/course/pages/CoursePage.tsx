@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useCourseSearch, useDeleteCourse } from '../hooks/useCourses';
 import type { Course } from '../types';
-import { Card, Button, Badge, CardGridSkeleton, DataTable, SearchToolbar, Pagination, Column } from '@/components/ui';
+import { Card, Button, Badge, PageSkeleton, CardGridSkeleton, TableSkeleton, DataTable, SearchToolbar, Pagination, Column } from '@/components/ui';
 import { ErrorState, EmptyState, ConfirmDialog } from '@/components/feedback';
 
 type ViewMode = 'card' | 'table';
@@ -13,7 +13,7 @@ export default function CoursePage() {
   const [limit, setLimit] = useState(10);
   
   // Data Fetching
-  const { data: response, isLoading, isError } = useCourseSearch({ search, page, limit });
+  const { data: response, isLoading, isFetching, isError } = useCourseSearch({ search, page, limit });
   const { mutate: deleteCourse } = useDeleteCourse();
   
   // UI State
@@ -63,22 +63,14 @@ export default function CoursePage() {
     },
   ], []);
 
-  if (isLoading) {
-    return (
-      <div className="space-y-8">
-        <div className="flex justify-between items-center">
-          <div className="h-12 w-48 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-xl" />
-          <div className="h-12 w-32 bg-gray-200 dark:bg-gray-800 animate-pulse rounded-xl" />
-        </div>
-        <CardGridSkeleton count={6} />
-      </div>
-    );
+  if (isLoading && !response) {
+    return <PageSkeleton viewMode={viewMode} />;
   }
 
   if (isError) return <ErrorState />;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 animate-fade-in-up">
       {/* Header Profile Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
@@ -106,7 +98,9 @@ export default function CoursePage() {
       />
 
       {/* Main Content Display */}
-      {courses.length === 0 ? (
+      {isFetching ? (
+        viewMode === 'card' ? <CardGridSkeleton count={limit} /> : <TableSkeleton />
+      ) : courses.length === 0 ? (
         <EmptyState message="Library is empty!" emoji="📚" />
       ) : (
         <div className="space-y-10">
